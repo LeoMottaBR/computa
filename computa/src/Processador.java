@@ -15,8 +15,9 @@ public class Processador{
 	  	for (int i = 0; i < 100; i++){
    			if (m.get_valor(i)/100 != 43){
     			if (i == 99){
-       				JOptionPane.showMessageDialog(null,"Não existe instrução de parada, programa terminado!!!" ,"Computa...",JOptionPane.INFORMATION_MESSAGE);
-       				ver = false;
+       				JOptionPane.showMessageDialog(null,"Nï¿½o existe instruï¿½ï¿½o de parada, programa terminado!!!" ,"Computa...",JOptionPane.INFORMATION_MESSAGE);
+       				//ver = false;
+       				ver = true;
        				break;
       		    }else{
                	  
@@ -44,7 +45,7 @@ public class Processador{
 		    }
 		    /*
 		      if((reg.get_Cop() != 20) || (reg.get_Cop() != 21) || (reg.get_Cop() != 22)){
-				JOptionPane.showMessageDialog(null, "A instrução: " + reg.get_Cop() + " não é valida!" ,"Computa...",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "A instruï¿½ï¿½o: " + reg.get_Cop() + " nï¿½o ï¿½ valida!" ,"Computa...",JOptionPane.INFORMATION_MESSAGE);
 				break;
 			}
 			else
@@ -60,7 +61,7 @@ public class Processador{
 
 
 
-	public void Decodifica(){ //separa o valor da memoria identificando o tipo de operação
+	public void Decodifica(){ //separa o valor da memoria identificando o tipo de operaï¿½ï¿½o
 		reg.set_Cop(reg.get_RI()/100);
 		reg.set_Op(reg.get_RI()%100);
 		reg.set_CI(reg.get_CI() + 1);
@@ -88,7 +89,7 @@ public class Processador{
 	public void OpMemory(Memoria m){
    	   switch(reg.get_Cop()){
    		   case 10: //READ
-   		      int i = Le_Inteiro(JOptionPane.showInputDialog(null,"Digite um numero para gravar na memória!" ,"Computa...",JOptionPane.INFORMATION_MESSAGE));
+   		      int i = Le_Inteiro(JOptionPane.showInputDialog(null,"Digite um numero para gravar na memï¿½ria!" ,"Computa...",JOptionPane.INFORMATION_MESSAGE));
    		      m.set_valor(i,reg.get_Op());
    		   break;   //WRITE		   
 		   case 11: 
@@ -103,7 +104,7 @@ public class Processador{
 		   case 40: //BRANCH
 		   	   reg.set_CI(reg.get_Op());
 		   break;
-		   case 41: //BRANCHNEG - coloca em CI o valor da Op para desviar a operação
+		   case 41: //BRANCHNEG - coloca em CI o valor da Op para desviar a operaï¿½ï¿½o
 		   	   if (reg.get_AC() < 0)
 		   	   	  reg.set_CI(reg.get_Op());
 		   break;		   
@@ -128,20 +129,20 @@ public class Processador{
  *
  *CARBGA/ARAMAZENAMENTO
  *LOAD = 20
- *STORE = 21 . ARMAZENA UMA PALAVRA DO ACUMULADOR EM POSIÇÃO ESPECIFICA DA MEMÓRIA
+ *STORE = 21 . ARMAZENA UMA PALAVRA DO ACUMULADOR EM POSIï¿½ï¿½O ESPECIFICA DA MEMï¿½RIA
  *
- *ARITIMÉTICA
- *ADD = 30 . ADICIONA UMA PALAVRA DE UMA POSIÇÃO DE MEMORIA À PALVRA NO ACUMULADOR E DEIXA O RESULTADO NO MESMO
- *SUBTRACT = 31 . SUBTRAI UMA PALAVRA DE UMA POSIÇÃO ESPECIFICA DA MEMORIA DA PALAVRA NO ACUMULADOR 
+ *ARITIMï¿½TICA
+ *ADD = 30 . ADICIONA UMA PALAVRA DE UMA POSIï¿½ï¿½O DE MEMORIA ï¿½ PALVRA NO ACUMULADOR E DEIXA O RESULTADO NO MESMO
+ *SUBTRACT = 31 . SUBTRAI UMA PALAVRA DE UMA POSIï¿½ï¿½O ESPECIFICA DA MEMORIA DA PALAVRA NO ACUMULADOR 
  *DIVIDE = 32 . DIVIDE
  *MULTIPLY = 33 . MULTIPLICA
  *
  *
  *TRANSFERENCIA DE CONTROLE
- *BRANCH = 40 . DESVIA PARA POSIÇÃO ESPECIFICA DA MEMÓRIA
- *BRANCHNEG = 41 . DESVIA PARA POSIÇÃO ESPECIFICA DA MEMÓRIA SE O ACUMULADOR FOR NEGATIVO
- *BRANCHZERO = 42 . DESVIA PARA POSIÇÃO ESPECIFICA DA MEMÓRIA SE O ACUMULADOR FOR ZERO
- *HALT = 43 . PÁRA O PROGRAMA.
+ *BRANCH = 40 . DESVIA PARA POSIï¿½ï¿½O ESPECIFICA DA MEMï¿½RIA
+ *BRANCHNEG = 41 . DESVIA PARA POSIï¿½ï¿½O ESPECIFICA DA MEMï¿½RIA SE O ACUMULADOR FOR NEGATIVO
+ *BRANCHZERO = 42 . DESVIA PARA POSIï¿½ï¿½O ESPECIFICA DA MEMï¿½RIA SE O ACUMULADOR FOR ZERO
+ *HALT = 43 . Pï¿½RA O PROGRAMA.
 */
 
 }
